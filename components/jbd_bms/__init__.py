@@ -7,6 +7,7 @@ from esphome.const import (
     CONF_ADDRESS,
     CONF_DISABLE_CRC,
 )
+from esphome import pins
 
 CODEOWNERS = ["@syssi"]
 
