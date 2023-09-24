@@ -120,6 +120,7 @@ class JbdBms : public uart::UARTDevice, public PollingComponent {
   void set_enable_fake_traffic(bool enable_fake_traffic) { enable_fake_traffic_ = enable_fake_traffic; }
   void set_rx_timeout(uint16_t rx_timeout) { rx_timeout_ = rx_timeout; }
   void write_register(uint8_t address, uint16_t value);
+  void set_flow_control_pin(GPIOPin *flow_control_pin) { this->flow_control_pin_ = flow_control_pin; }
 
  protected:
   binary_sensor::BinarySensor *balancing_binary_sensor_;
@@ -184,6 +185,7 @@ class JbdBms : public uart::UARTDevice, public PollingComponent {
   uint8_t no_response_count_{0};
   bool enable_fake_traffic_;
   uint8_t modbus_id_;
+  GPIOPin *flow_control_pin_{nullptr};
 
   void on_jbd_bms_data_(const uint8_t &function, const std::vector<uint8_t> &data);
   void on_cell_info_data_(const std::vector<uint8_t> &data);
