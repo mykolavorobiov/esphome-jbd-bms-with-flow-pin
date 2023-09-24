@@ -1,7 +1,12 @@
 import esphome.codegen as cg
 from esphome.components import uart
 import esphome.config_validation as cv
-from esphome.const import CONF_ID
+from esphome.const import (
+    CONF_FLOW_CONTROL_PIN,
+    CONF_ID,
+    CONF_ADDRESS,
+    CONF_DISABLE_CRC,
+)
 
 CODEOWNERS = ["@syssi"]
 
