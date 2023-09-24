@@ -1,5 +1,6 @@
 import esphome.codegen as cg
 from esphome.components import uart
+from esphome.cpp_helpers import gpio_pin_expression
 import esphome.config_validation as cv
 from esphome.const import (
     CONF_FLOW_CONTROL_PIN,
