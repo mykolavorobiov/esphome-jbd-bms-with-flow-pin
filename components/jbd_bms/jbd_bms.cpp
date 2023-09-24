@@ -492,8 +492,15 @@ void JbdBms::send_command_(uint8_t action, uint8_t function) {
   frame[6] = crc >> 0;
   frame[7] = JBD_PKT_END;
 
+    
+  if (this->flow_control_pin_ != nullptr)
+    this->flow_control_pin_->digital_write(true);
+
   this->write_array(frame, 8);
   this->flush();
+
+  if (this->flow_control_pin_ != nullptr)
+    this->flow_control_pin_->digital_write(false);
   
 }
 
