@@ -17,7 +17,6 @@ MULTI_CONF = True
 
 CONF_JBD_BMS_ID = "jbd_bms_id"
 CONF_ENABLE_FAKE_TRAFFIC = "enable_fake_traffic"
-CONF_FLOW_CONTROL_PIN = ""
 CONF_RX_TIMEOUT = "rx_timeout"
 CONF_MODBUS_ID = "modbus_id"
 
