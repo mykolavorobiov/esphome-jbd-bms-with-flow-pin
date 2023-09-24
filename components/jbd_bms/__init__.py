@@ -38,5 +38,6 @@ async def to_code(config):
     await uart.register_uart_device(var, config)
 
     cg.add(var.set_enable_fake_traffic(config[CONF_ENABLE_FAKE_TRAFFIC]))
+    cg.add(var.set_flow_control_pin(config[CONF_FLOW_CONTROL_PIN]))
     cg.add(var.set_rx_timeout(config[CONF_RX_TIMEOUT]))
     cg.add(var.set_modbus_id(config[CONF_MODBUS_ID]))
