@@ -120,7 +120,6 @@ class JbdBms : public uart::UARTDevice, public PollingComponent {
   void set_enable_fake_traffic(bool enable_fake_traffic) { enable_fake_traffic_ = enable_fake_traffic; }
   void set_rx_timeout(uint16_t rx_timeout) { rx_timeout_ = rx_timeout; }
   void write_register(uint8_t address, uint16_t value);
-  void set_flow_control_pin(int8_t flow_control_pin) { flow_control_pin_ = flow_control_pin; }
 
  protected:
   binary_sensor::BinarySensor *balancing_binary_sensor_;
