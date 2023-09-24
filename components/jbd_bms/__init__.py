@@ -21,6 +21,7 @@ CONFIG_SCHEMA = (
     cv.Schema(
         {
             cv.GenerateID(): cv.declare_id(JbdBms),
+            cv.Optional(CONF_FLOW_CONTROL_PIN): pins.gpio_output_pin_schema,
             cv.Optional(CONF_ENABLE_FAKE_TRAFFIC, default=False): cv.boolean,
             cv.Optional(CONF_RX_TIMEOUT, default="150ms"): cv.positive_time_period_milliseconds,
             cv.Optional(CONF_MODBUS_ID, default=0): cv.int_range(min=0, max=15)
